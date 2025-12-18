@@ -93,6 +93,7 @@ long tarkib(int n, int k)
 
 int main() {
     int entekhab;
+    cout<<"hello";
    
     cout << "1. Amaliat Arraye\n";
     cout << "2. Moadele\n";

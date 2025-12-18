@@ -48,7 +48,7 @@ if(b == 0) return a;
 
 long kmm(long a, long b) 
 {
-
+ return (a * b) / bmm(a, b);
 }
     
 

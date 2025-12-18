@@ -6,6 +6,18 @@ using namespace std;
 
 void calc_arr(float arr[], int n, float &jam, float &menha, float &zarb) 
 {
+   jam = 0;
+ zarb = 1;
+ menha = arr[0];
+ 
+ for(int i=0; i<n; i++) {
+ jam += arr[i];
+ zarb *= arr[i];
+ if(i != 0) {
+ menha -= arr[i];
+ }
+ }
+ 
 
 }
 
@@ -29,20 +41,29 @@ void hal_do(float a, float b, float c)
 
 long bmm(long a, long b) 
 {
-
+if(b == 0) return a;
+    return bmm(b, a % b);
 }
    
 
 long kmm(long a, long b) 
 {
-
+ return (a * b) / bmm(a, b);
 }
     
 
 
 long tarkib(int n, int k) 
 {
-
+if (k > n) return 0;
+    if (k == 0 || k == n) return 1;
+    if (k > n / 2) k = n - k;
+   
+    long res = 1;
+    for (int i = 1; i <= k; i++) {
+        res = res * (n - i + 1) / i;
+    }
+    
 }
    
 

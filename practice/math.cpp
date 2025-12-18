@@ -6,6 +6,17 @@ using namespace std;
 
 void calc_arr(float arr[], int n, float &jam, float &menha, float &zarb) 
 {
+    jam = 0;
+    zarb = 1;
+    menha = arr[0];
+   
+    for(int i=0; i<n; i++) {
+        jam += arr[i];
+        zarb *= arr[i];
+        if(i != 0) {
+            menha -= arr[i];
+        }
+    }
    jam = 0;
  zarb = 1;
  menha = arr[0];
@@ -25,6 +36,11 @@ void calc_arr(float arr[], int n, float &jam, float &menha, float &zarb)
 
 void hal_yek(float a, float b) 
 {
+     if(a == 0) {
+        cout << "Javab nadarad" << endl;
+    } else {
+        cout << "X = " << -b/a << endl;
+    }
 
 }
 
@@ -34,6 +50,23 @@ void hal_yek(float a, float b)
 void hal_do(float a, float b, float c) 
 {
 
+    float delta = (b*b) - (4*a*c);
+   
+    if(a == 0) {
+        // Age a 0 bashe mishe daraje 1
+        hal_yek(b, c);
+    }
+    else if(delta > 0) {
+        float x1 = (-b + sqrt(delta)) / (2*a);
+        float x2 = (-b - sqrt(delta)) / (2*a);
+        cout << "X1 = " << x1 << "\nX2 = " << x2 << endl;
+    }
+    else if(delta == 0) {
+        cout << "X = " << -b / (2*a) << endl;
+    }
+    else {
+        cout << "Rishe haghighi nadarad" << endl;
+    }
 }
 
   
@@ -41,6 +74,9 @@ void hal_do(float a, float b, float c)
 
 long bmm(long a, long b) 
 {
+    if(b == 0) return a;
+    return bmm(b, a % b);
+
 if(b == 0) return a;
     return bmm(b, a % b);
 }
@@ -69,6 +105,7 @@ if (k > n) return 0;
 
 int main() {
     int entekhab;
+    cout<<"hello";
    
     cout << "1. Amaliat Arraye\n";
     cout << "2. Moadele\n";

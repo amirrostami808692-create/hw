@@ -6,6 +6,18 @@ using namespace std;
 
 void calc_arr(float arr[], int n, float &jam, float &menha, float &zarb) 
 {
+   jam = 0;
+ zarb = 1;
+ menha = arr[0];
+ 
+ for(int i=0; i<n; i++) {
+ jam += arr[i];
+ zarb *= arr[i];
+ if(i != 0) {
+ menha -= arr[i];
+ }
+ }
+ cout << "hello";
 
 }
 

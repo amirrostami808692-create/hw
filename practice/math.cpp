@@ -17,7 +17,7 @@ void calc_arr(float arr[], int n, float &jam, float &menha, float &zarb)
  menha -= arr[i];
  }
  }
- cout << "hello";
+ 
 
 }
 
@@ -41,7 +41,8 @@ void hal_do(float a, float b, float c)
 
 long bmm(long a, long b) 
 {
-
+if(b == 0) return a;
+    return bmm(b, a % b);
 }
    
 
